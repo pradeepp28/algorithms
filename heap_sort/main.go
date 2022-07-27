@@ -47,6 +47,12 @@ func main() {
 	heapSort(arr)
 	fmt.Println(arr)
 
+	arr = []int{1, 1, 2, 1, 2, 1, 2}
+
+	heapSort(arr)
+	fmt.Println(arr)
+
+	arr = []int{4, 2, 1, 5, 7, 9}
 	n := len(arr)
 	for i := n/2 - 1; i >= 0; i-- {
 		heapify(arr, n, i)

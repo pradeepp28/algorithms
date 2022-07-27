@@ -90,18 +90,34 @@ func printInOrder(n *Node) {
 	}
 }
 
+func bfs(n *Node) {
+	if n == nil {
+		return
+	}
+	// fmt.Printf("%c ", n.key)
+	if n.left != nil {
+		fmt.Printf("%c ", n.left.key)
+	}
+	if n.right != nil {
+		fmt.Printf("%c ", n.right.key)
+	}
+	bfs(n.left)
+	bfs(n.right)
+}
 func main() {
 	var t Tree
 
 	t.insert('F')
-	t.insert('E')
-	t.insert('A')
 	t.insert('D')
-	t.insert('C')
 	t.insert('B')
-	t.insert('G')
-	t.insert('I')
+	t.insert('K')
+	t.insert('E')
+	t.insert('C')
+	t.insert('A')
+	t.insert('L')
 	t.insert('H')
+	t.insert('I')
+	t.insert('G')
 
 	fmt.Printf("Pre Order: ")
 	printPreOrder(t.root)
@@ -113,4 +129,5 @@ func main() {
 	printInOrder(t.root)
 	fmt.Println()
 	t.String()
+	bfs(t.root)
 }
